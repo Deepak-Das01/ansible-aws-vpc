@@ -10,6 +10,9 @@
     - name: Import Vpc Setup Variables
       include_vars: /home/ubuntu/ansible-aws-vpc/vars/output_vars
 
+    - name: Import acess keys Variables
+      include_vars: /home/ubuntu/ansible-aws-vpc/vars/aws_key
+
     - name: Create vprofile ec2 key
       ec2_key:
         name: vprofile-key
@@ -38,6 +41,8 @@
 
     - name: Creating Bastion Host
       ec2:
+        aws_access_key: "{{ a_key }}"
+        aws_secret_key: "{{ s_key }}"
         key_name: vprofile-key
         region: "{{ region }}"
         instance_type: t2.micro
