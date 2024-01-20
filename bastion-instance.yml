@@ -50,7 +50,7 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          Name: "Bastion Host"
+          Name: "Bastion_Host"
           Project: Vprofile
           Owner: Devops Teams
         group_id: "{{ BastionSG_out.group_id }}"
