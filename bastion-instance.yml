@@ -52,7 +52,7 @@
         instance_tags:
           Name: "Bastion_Host"
           Project: Vprofile
-          Owner: Devops Teams
+          Owner: "Devops Teams"
         group_id: "{{ BastionSG_out.group_id }}"
         vpc_subnet_id: "{{ pubsub1id }}"
       register: bastionHost_out
